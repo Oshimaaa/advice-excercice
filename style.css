@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.bloc {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: hsl(218, 23%, 16%);
+    width: 500px;
+    height: 250px;
+    flex-direction: column-reverse;
+    border-radius: 20px;
+}
+.text-tittle {
+    color: hsl(150, 100%, 66%);
+    margin-top: 20px;
+    font-size: 20px;
+}
+.text-advice {
+    color: hsl(193, 38%, 86%);
+    margin-top: 40px;
+    width: 350px;
+    text-align: center;
+    font-size: 20px;
+}
+.pattern-desktop {
+    position: absolute;
+    margin-top: 180px;
+}
+.refresh-button {
+    position: fixed;
+   margin-top: 250px;
+   border-radius:50%;
+   border: 0;
+   padding: 15px;
+   cursor: pointer;
+   background-color: hsl(150, 100%, 66%);
+}

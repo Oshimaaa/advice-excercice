@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Advice generator app</title>
+  </head>
+
+  <body>
+    <button class="refresh-button" onclick="refreshPage()">
+      <img src="./images/icon-dice.svg" alt="incon-refresh" />
+    </button>
+    <div class="bloc">
+      <img
+        class="pattern-desktop"
+        src="./images/pattern-divider-desktop.svg"
+        width="250px"
+        alt="pattern"
+      />
+      <p class="text-advice"></p>
+      <p class="text-tittle">Advice #<span id="advice-number"></span></p>
+    </div>
+    <div class="tittle"></div>
+
+    <script>
+      fetch("https://api.adviceslip.com/advice")
+        .then((response) => response.json())
+        .then((data) => {
+          const adviceNumberElement = document.getElementById("advice-number");
+          const adviceTextElement = document.querySelector(".text-advice");
+          adviceNumberElement.textContent = data.slip.id;
+          adviceTextElement.textContent = data.slip.advice;
+        })
+        .catch((error) => {
+          console.log("error 🤡", error);
+        });
+      function refreshPage() {
+        location.reload();
+      }
+    </script>
+  </body>
+</html>
